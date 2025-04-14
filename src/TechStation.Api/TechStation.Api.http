@@ -1,0 +1,6 @@
+@TechStation.Api_HostAddress = http://localhost:5131
+
+GET {{TechStation.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
