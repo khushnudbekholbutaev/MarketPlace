@@ -10,7 +10,7 @@ env:
   AZURE_WEBAPP_NAME: TechStation
   AZURE_WEBAPP_PACKAGE_PATH: "./publish"
   DOTNET_VERSION: "8.0.x"
-  SOLUTION_PATH: "TechStation.sln"
+  SOLUTION_PATH: "TechStation.Api.sln"
   API_PROJECT_PATH: "src/TechStation.Api/TechStation.Api.csproj"
 
 jobs:
