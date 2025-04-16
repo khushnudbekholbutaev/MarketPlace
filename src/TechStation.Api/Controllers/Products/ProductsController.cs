@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TechStation.Api.Helpers;
 using TechStation.Domain.Configurations;
+using TechStation.Domain.Enums;
 using TechStation.Service.DTOs.Products;
 using TechStation.Service.Interfaces.Products;
 using TechStation.Service.Services.Products;
@@ -117,6 +118,12 @@ public class ProductsController : BaseController
 
         var result = await productService.SearchByProductNameAsync(searchTerm);
 
+        return Ok(result);
+    }
+    [HttpGet("sot-price")]
+    public async Task<ActionResult<List<ProductForResultDto>>> SortByProductPrice([FromQuery] long price, [FromQuery] SortPrice sort)
+    {
+        var result = await productService.SortByPriceAsync(price, sort);
         return Ok(result);
     }
 }

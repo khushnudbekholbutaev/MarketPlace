@@ -16,42 +16,11 @@ public class BannersController : BaseController
         this.bannerService = bannerService;
     }
     [HttpGet]
-    public async Task<IActionResult> GetAllAsync(
-        [FromQuery] PaginationParams @params,
-        [FromQuery] string? bannerName,
-        [FromQuery] string? nameType = "uz")
+    public async Task<IActionResult> GetAllAsync([FromQuery] PaginationParams @params)
     {
-        // Faqat 'uz' yoki 'ru' bo‘lishini tekshirish
-        if (!string.IsNullOrEmpty(nameType) && nameType != "uz" && nameType != "ru")
-        {
-            return BadRequest(new { message = "nameType faqat 'uz' yoki 'ru' bo‘lishi mumkin" });
-        }
-
-        // Bannerlarni olish va filtrlash
-        var banners = await bannerService.RetrieveAllAsync(@params, bannerName, nameType);
-
-        // Jami bannerlar sonini olish
-        var totalCount = await bannerService.CountAsync();
-
-        // Pagination metadata yaratish
-        var paginationMetaData = new PaginationMetaData(totalCount, @params);
-
-        // Natijani qaytarish
-        var response = new Response
-        {
-            StatusCode = 200,
-            Message = "Ok",
-            Data = new
-            {
-                banners,
-                paginationMetaData
-            }
-        };
-
-        return Ok(response);
+        var result = await bannerService.RetrieveAllAsync(@params);
+        return Ok(result);
     }
-
-
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetByIdAsync(long id)

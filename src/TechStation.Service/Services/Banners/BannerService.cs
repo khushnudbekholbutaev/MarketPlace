@@ -50,11 +50,11 @@ public class BannerService : IBannerService
             .FirstOrDefaultAsync();
         if (brend is null)
             throw new TechStationException(404, "Brend is not found");
-        var banner = await bannerRepository.SelectAll()
-            .Where(b => b.NameUz.ToLower() == dto.NameUz.ToLower())
-            .FirstOrDefaultAsync();
-        if (banner is not null)
-            throw new TechStationException(409,"Banner is already exists");
+        //var banner = await bannerRepository.SelectAll()
+        //    .Where(b => b.NameUz.ToLower() == dto.NameUz.ToLower())
+        //    .FirstOrDefaultAsync();
+        //if (banner is not null)
+        //    throw new TechStationException(409,"Banner is already exists");
         #region Images
         // Rasmlar yo'llari uchun ro'yxat
         var imageResults = new List<string>();
@@ -154,32 +154,13 @@ public class BannerService : IBannerService
         return true;
     }
 
-    public async Task<ICollection<BannerForResultDto>> RetrieveAllAsync(PaginationParams @params, string? bannerName, string? nameType = "uz")
+    public async Task<ICollection<BannerForResultDto>> RetrieveAllAsync(PaginationParams @params)
     {
-        var query = bannerRepository.SelectAll();
-
-        if (!string.IsNullOrEmpty(bannerName))
-        {
-            string search = $"%{bannerName.ToLower()}%";
-
-            if (nameType == "uz")
-            {
-                query = query.Where(b => EF.Functions.Like(b.NameUz.ToLower(), search));
-            }
-            else if (nameType == "ru")
-            {
-                query = query.Where(b => EF.Functions.Like(b.NameRu.ToLower(), search));
-            }
-        }
-
-        // Pagination qo‘llash
-        var pagedBanners = await query
-            .Skip((@params.PageIndex - 1) * @params.PageSize)
-            .Take(@params.PageSize)
-            .AsNoTracking()
+        var banners = await bannerRepository.SelectAll()
+            .ToPagedList(@params)
             .ToListAsync();
 
-        return mapper.Map<ICollection<BannerForResultDto>>(pagedBanners);
+        return mapper.Map<ICollection<BannerForResultDto>>(banners);
     }
 
 
@@ -198,5 +179,10 @@ public class BannerService : IBannerService
             throw new TechStationException(404, "Banner is not found");
 
         return mapper.Map<BannerForResultDto>(banner);
+    }
+
+    public Task<BannerForResultDto> GetBannerName(string name)
+    {
+        throw new NotImplementedException();
     }
 }

@@ -1,4 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using TechStation.Data.DbContexts.SeedDatas.Banners;
+using TechStation.Data.DbContexts.SeedDatas.Brends;
+using TechStation.Data.DbContexts.SeedDatas.CartItems;
+using TechStation.Data.DbContexts.SeedDatas.Catalogs;
+using TechStation.Data.DbContexts.SeedDatas.Categories;
+using TechStation.Data.DbContexts.SeedDatas.Orders;
+using TechStation.Data.DbContexts.SeedDatas.Payments;
+using TechStation.Data.DbContexts.SeedDatas.Products;
+using TechStation.Data.DbContexts.SeedDatas.Users;
 using TechStation.Domain.Entities;
 
 namespace TechStation.Data.DbContexts;
@@ -114,5 +123,20 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<OrderDetail>().Property(od => od.TotalAmount).HasPrecision(18, 2);
         modelBuilder.Entity<Payment>().Property(p => p.Amount).HasPrecision(18, 2);
         modelBuilder.Entity<Product>().Property(p => p.Price).HasPrecision(18, 2);
+        //SeedData(modelBuilder);
+    }
+
+    private static void SeedData(ModelBuilder modelBuilder)
+    {
+        SeedBanner.SeedDataBanner(modelBuilder);
+        SeedBrend.SeedDataBrend(modelBuilder);
+        SeedCartItem.SeedDataCartItem(modelBuilder);
+        SeedCatalog.SeedDataCatalog(modelBuilder);
+        SeedCategory.SeedDataCategory(modelBuilder);
+        SeedOrder.SeedDataOrder(modelBuilder);
+        SeedPayment.SeedDataPayment(modelBuilder);
+        SeedProduct.SeedDataProduct(modelBuilder);
+        SeedUser.SeedDataUser(modelBuilder);
+        SeedUserRole.SeedDataUserRole(modelBuilder);
     }
 }

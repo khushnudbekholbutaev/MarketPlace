@@ -5,11 +5,13 @@ using TechStation.Data.DbContexts;
 using TechStation.Data.IRepositories;
 using TechStation.Domain.Configurations;
 using TechStation.Domain.Entities;
+using TechStation.Domain.Enums;
 using TechStation.Service.DTOs.Products;
 using TechStation.Service.Exceptions;
 using TechStation.Service.Helpers;
 using TechStation.Service.Interfaces.Files;
 using TechStation.Service.Interfaces.Products;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace TechStation.Service.Services.Products;
 
@@ -293,4 +295,32 @@ public class ProductService : IProductService
 
         return mapper.Map<List<ProductForResultDto>>(fuzzyResults.Select(p => p.Product).ToList());
     }
+
+    public async Task<List<ProductForResultDto>> SortByPriceAsync(long price, SortPrice sort)
+    {
+        var query = appDbContext.Products.AsQueryable();
+
+        switch (sort)
+        {
+            case SortPrice.ascending:
+                query = query
+                    .Where(p => p.Price >= price)
+                    .OrderBy(p => p.Price);
+                break;
+
+            case SortPrice.descending:
+                query = query
+                    .Where(p => p.Price <= price)
+                    .OrderByDescending(p => p.Price);
+                break;
+
+            default:
+                break;
+        }
+
+        var products = await query.ToListAsync();
+
+        return mapper.Map<List<ProductForResultDto>>(products);
+    }
+
 }

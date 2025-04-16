@@ -1,4 +1,5 @@
 ﻿using TechStation.Domain.Configurations;
+using TechStation.Domain.Enums;
 using TechStation.Service.DTOs.Products;
 
 namespace TechStation.Service.Interfaces.Products;
@@ -9,6 +10,7 @@ public interface IProductService
     Task<bool> RemoveAsync(long id);
     Task<ProductForResultDto> RetrieveByIdAsync(long id);
     Task<ProductForResultDto> AddAsync(ProductForCreationDto dto);
+    Task<List<ProductForResultDto>> SortByPriceAsync(long price,SortPrice sort);
     Task<ProductForResultDto> ModifyAsync(long id,ProductForUpdateDto dto);
     Task<List<ProductForResultDto>> SearchByProductNameAsync(string searchTerm);
     Task<IEnumerable<ProductForResultDto>> RetrieveAllAsync(

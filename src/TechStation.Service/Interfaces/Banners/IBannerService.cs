@@ -8,7 +8,8 @@ public interface IBannerService
     Task<int> CountAsync();
     Task<bool> RemoveAsync(long id);
     Task<BannerForResultDto> RetrieveByIdAsync(long id);
+    Task<BannerForResultDto> GetBannerName(string name);
     Task<BannerForResultDto> AddAsync(BannerForCreationDto dto);
     Task<BannerForResultDto> ModifyAsync(long id,BannerForUpdateDto dto);
-    Task<ICollection<BannerForResultDto>> RetrieveAllAsync(PaginationParams @params, string? bannerName, string? nameType);
+    Task<ICollection<BannerForResultDto>> RetrieveAllAsync(PaginationParams @params);
 }
