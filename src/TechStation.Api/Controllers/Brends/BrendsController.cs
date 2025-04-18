@@ -2,6 +2,7 @@
 using TechStation.Api.Helpers;
 using TechStation.Domain.Configurations;
 using TechStation.Service.DTOs.Brends;
+using TechStation.Service.DTOs.Products;
 using TechStation.Service.Interfaces.Brends;
 
 namespace TechStation.Api.Controllers.Brends;
@@ -81,6 +82,17 @@ public class BrendsController : BaseController
             StatusCode = 200,
             Message = "Ok",
             Data = await brendService.RemoveAsync(id)
+        });
+    }
+
+    [HttpGet("search-pruducts-by-BrandName")]
+    public async Task<IActionResult> RetrieveAllProdutsByBrandAsync(string searchTerm)
+    {
+        return Ok(new Response
+        {
+            StatusCode = 200,
+            Message = "Ok",
+            Data = await brendService.RetrieveAllProdutsByBrandAsync(searchTerm)
         });
     }
 
