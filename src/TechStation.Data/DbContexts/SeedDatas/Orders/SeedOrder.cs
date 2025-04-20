@@ -3,7 +3,7 @@ using TechStation.Domain.Entities;
 
 namespace TechStation.Data.DbContexts.SeedDatas.Orders;
 
-public static class SeedOrder
+public  class SeedOrder
 {
     public static void SeedDataOrder(ModelBuilder builder)
     {

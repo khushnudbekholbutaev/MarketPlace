@@ -3,7 +3,7 @@ using TechStation.Domain.Entities;
 
 namespace TechStation.Data.DbContexts.SeedDatas.Products;
 
-public static class SeedProduct
+public  class SeedProduct
 {
     public static void SeedDataProduct(ModelBuilder builder)
     {

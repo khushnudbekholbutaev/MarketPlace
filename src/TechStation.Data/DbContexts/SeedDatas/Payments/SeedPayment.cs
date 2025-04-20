@@ -4,7 +4,7 @@ using TechStation.Domain.Enums;
 
 namespace TechStation.Data.DbContexts.SeedDatas.Payments;
 
-public static class SeedPayment
+public  class SeedPayment
 {
     public static void SeedDataPayment(ModelBuilder builder)
     {

@@ -3,7 +3,7 @@ using TechStation.Domain.Entities;
 
 namespace TechStation.Data.DbContexts.SeedDatas.Users;
 
-public static class SeedUser
+public  class SeedUser
 {
     public static void SeedDataUser(ModelBuilder builder)
     {
