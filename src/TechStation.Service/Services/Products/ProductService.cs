@@ -230,18 +230,17 @@ public class ProductService : IProductService
     }
 
     private IQueryable<Product> ApplyFiltersAndSorting(
-        IQueryable<Product> query,
-        decimal? minPrice,
-        decimal? maxPrice,
-        string productName,
-        bool order)
+     IQueryable<Product> query,
+     decimal? minPrice,
+     decimal? maxPrice,
+     string productName,
+     bool order)
     {
         if (query == null)
         {
             throw new ArgumentNullException(nameof(query), "Query null qiymatga ega bo'lishi mumkin emas.");
         }
 
-        // Filtrlash
         if (minPrice.HasValue)
         {
             query = query.Where(p => p.Price >= minPrice.Value);
@@ -258,10 +257,18 @@ public class ProductService : IProductService
             query = query.Where(x => EF.Functions.Like(x.ProductName.ToLower(), search));
         }
 
-        // Tartiblash
-        // Tartiblash alohida listga olishda amalga oshiriladi
+        if (order)
+        {
+            query = query.OrderBy(p => p.Price);
+        }
+        else
+        {
+            query = query.OrderByDescending(p => p.Price);
+        }
+
         return query;
     }
+
 
 
     public async Task<int> CountAsync()
@@ -287,7 +294,7 @@ public class ProductService : IProductService
                   .Select(product => new
                   {
                       Product = product,
-                      Score = Fuzz.PartialRatio(product.ProductName.ToLower(), searchTerm.ToLower())  // You can use different fuzzy matching scores here
+                      Score = Fuzz.PartialRatio(product.ProductName.ToLower(), searchTerm.ToLower())  
                   })
                   .Where(result => result.Score >= 80)
                   .OrderByDescending(result => result.Score)
@@ -300,27 +307,25 @@ public class ProductService : IProductService
     {
         var query = appDbContext.Products.AsQueryable();
 
-        switch (sort)
+        if (sort == SortPrice.ascending)
         {
-            case SortPrice.ascending:
-                query = query
-                    .Where(p => p.Price >= price)
-                    .OrderBy(p => p.Price);
-                break;
+            query = query
+                .Where(p => p.Price >= price)
+                .OrderBy(p => p.Price);
+        }
+        else if (sort == SortPrice.descending)
+        {
+            if (price != 0 && price != null)
+                query = query.Where(p => p.Price <= price);
 
-            case SortPrice.descending:
-                query = query
-                    .Where(p => p.Price <= price)
-                    .OrderByDescending(p => p.Price);
-                break;
-
-            default:
-                break;
+            query = query.OrderByDescending(p => p.Price);
         }
 
         var products = await query.ToListAsync();
 
         return mapper.Map<List<ProductForResultDto>>(products);
     }
+
+
 
 }

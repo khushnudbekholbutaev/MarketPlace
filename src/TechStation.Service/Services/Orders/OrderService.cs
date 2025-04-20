@@ -46,8 +46,11 @@ public class OrderService : IOrderService
         if(order is not null)
             throw new TechStationException(409, "Order is already exist");
 
+        var totalAmount = product.Price * dto.Quantity;
+
         var mapped = mapper.Map<Order>(dto);
         mapped.CreatedAt = DateTime.UtcNow;
+        mapped.TotalAmount = totalAmount;
         await orderRepository.InsertAsync(mapped);
 
         return mapper.Map<OrderForResultDto>(mapped);
@@ -71,8 +74,12 @@ public class OrderService : IOrderService
         if (order is not null)
             throw new TechStationException(409, "Order is already exist");
 
+        var totalAmount = product.Price * dto.Quantity;
+
+
         var mapped = mapper.Map<Order>(dto);
         mapped.UpdatedAt = DateTime.UtcNow;
+        mapped.TotalAmount = totalAmount;
         await orderRepository.UpdateAsync(mapped);
 
         return mapper.Map<OrderForResultDto>(mapped);

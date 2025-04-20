@@ -84,4 +84,17 @@ public class AuthService : IAuthService
         }
         return Convert.ToBase64String(randomNumber); // Tasodifiy 64-bayt uzunlikdagi refresh token
     }
+
+    public async Task LogoutAsync(long userId)
+    {
+        var refreshTokens = await appDbContext.Set<RefreshToken>()
+            .Where(t => t.UserId == userId && t.ExpiryDate > DateTime.UtcNow)
+            .ToListAsync();
+
+        if (!refreshTokens.Any())
+            throw new InvalidOperationException("No active refresh tokens found for this user");
+
+        appDbContext.Set<RefreshToken>().RemoveRange(refreshTokens);
+        await appDbContext.SaveChangesAsync();
+    }
 }

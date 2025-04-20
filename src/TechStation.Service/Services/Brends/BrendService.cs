@@ -6,6 +6,7 @@ using TechStation.Domain.Configurations;
 using TechStation.Domain.Entities;
 using TechStation.Service.Commons.CollectionExtensions;
 using TechStation.Service.DTOs.Brends;
+using TechStation.Service.DTOs.Products;
 using TechStation.Service.Exceptions;
 using TechStation.Service.Interfaces.Brends;
 
@@ -74,6 +75,20 @@ public class BrendService : IBrendService
 
         return mapper.Map<ICollection<BrendForResultDto>>(brend);
     }
+    public async Task<ICollection<ProductForResultDto>> RetrieveAllProdutsByBrandAsync(string searchTerm)
+    {
+        var brand = await brendRepository.SelectAll()
+            .Include(b => b.Products)
+            .FirstOrDefaultAsync(p => p.BrendName == searchTerm);
+
+        if (brand == null || brand.Products == null || !brand.Products.Any())
+            return new List<ProductForResultDto>();
+
+        return mapper.Map<ICollection<ProductForResultDto>>(brand.Products);
+    }
+
+
+
     public async Task<int> CountAsync()
     {
         // Brendlar sonini olish
@@ -90,4 +105,5 @@ public class BrendService : IBrendService
 
         return mapper.Map<BrendForResultDto>(brand);
     }
+
 }

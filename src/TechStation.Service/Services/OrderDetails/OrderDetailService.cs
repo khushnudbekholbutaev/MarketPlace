@@ -45,6 +45,8 @@ public class OrderDetailService : IOrderDetailService
             .FirstOrDefaultAsync();
         if (orderDetail is not null)
             throw new TechStationException(409, "Order Detail is allready exists");
+
+
         var mapped = mapper.Map<OrderDetail>(dto);
         mapped.CreatedAt = DateTime.UtcNow;
         await orderDetailRepository.InsertAsync(mapped);

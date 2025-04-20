@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using TechStation.Data.DbContexts.SeedDatas.Banners;
 using TechStation.Data.DbContexts.SeedDatas.Brends;
 using TechStation.Data.DbContexts.SeedDatas.CartItems;
@@ -123,6 +124,7 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<OrderDetail>().Property(od => od.TotalAmount).HasPrecision(18, 2);
         modelBuilder.Entity<Payment>().Property(p => p.Amount).HasPrecision(18, 2);
         modelBuilder.Entity<Product>().Property(p => p.Price).HasPrecision(18, 2);
+        
         //SeedData(modelBuilder);
     }
 
@@ -138,5 +140,5 @@ public class AppDbContext : DbContext
         SeedProduct.SeedDataProduct(modelBuilder);
         SeedUser.SeedDataUser(modelBuilder);
         SeedUserRole.SeedDataUserRole(modelBuilder);
-    }
+    } 
 }

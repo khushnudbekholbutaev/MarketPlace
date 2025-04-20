@@ -53,13 +53,15 @@ public class RefreshTokenService : IRefreshTokenService
     {
         var tokenHandler = new JwtSecurityTokenHandler();
         var tokenKey = Encoding.UTF8.GetBytes(configuration["JWT:Key"]);
+        var roleClaim = new Claim(ClaimTypes.Role, user.Role.ToString());
         var tokenDescriptor = new SecurityTokenDescriptor
         {
             Subject = new ClaimsIdentity(new Claim[]
             {
                     new Claim("Id", user.Id.ToString()),
                     new Claim("Username", user.UserName),
-                    new Claim("Email",user.Email)
+                    new Claim("Email",user.Email),
+                    roleClaim
             }),
             Audience = configuration["JWT:Audience"],
             Issuer = configuration["JWT:Issuer"],
