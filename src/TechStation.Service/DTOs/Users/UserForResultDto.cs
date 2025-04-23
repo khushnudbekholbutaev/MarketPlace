@@ -1,4 +1,5 @@
 ﻿using TechStation.Domain.Entities;
+using TechStation.Domain.Enums;
 using TechStation.Service.DTOs.CartItems;
 using TechStation.Service.DTOs.Favourites;
 using TechStation.Service.DTOs.Orders;

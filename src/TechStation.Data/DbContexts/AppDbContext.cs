@@ -18,6 +18,7 @@ public class AppDbContext : DbContext
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
     public DbSet<User> Users { get; set; }
+    public DbSet<UserRole> UserRoles { get; set; }
     public DbSet<RefreshToken> RefreshTokens { get; set; }
     public DbSet<Catalog> Catalogs { get; set; }
     public DbSet<Category> Categories { get; set; }
@@ -29,6 +30,7 @@ public class AppDbContext : DbContext
     public DbSet<Brend> Brends { get; set; }
     public DbSet<CartItem> CartItems { get; set; }
     public DbSet<Favourite> Favorites { get; set; }
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -119,11 +121,22 @@ public class AppDbContext : DbContext
             .HasForeignKey(c => c.CatalogId)
             .OnDelete(DeleteBehavior.Cascade);
 
+        //// UserRole with USe
+        //modelBuilder.Entity<UserRole>()
+        //    .HasOne(ur => ur.User)
+        //    .WithOne(u => u.UserRole)
+        //    .HasForeignKey<UserRole>(ur => ur.UserId)
+        //    .OnDelete(DeleteBehavior.Cascade);
+
         // Decimal tiplarini aniqlashtirish
         modelBuilder.Entity<Order>().Property(o => o.TotalAmount).HasPrecision(18, 2);
         modelBuilder.Entity<OrderDetail>().Property(od => od.TotalAmount).HasPrecision(18, 2);
         modelBuilder.Entity<Payment>().Property(p => p.Amount).HasPrecision(18, 2);
         modelBuilder.Entity<Product>().Property(p => p.Price).HasPrecision(18, 2);
+
+        
+      //  SeedData(modelBuilder);
+    }
 
         SeedBanner.SeedDataBanner(modelBuilder);
         SeedBrend.SeedDataBrend(modelBuilder);
