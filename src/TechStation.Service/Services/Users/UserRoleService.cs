@@ -34,13 +34,24 @@ public class UserRoleService : IUserRoleService
         var user = await userService.RetrieveByIdasync(userRole.UserId)
             ?? throw new TechStationException(404, "User is not found");
 
+        var existing = await repository.SelectAll()
+            .FirstOrDefaultAsync(ur => ur.UserId == userRole.UserId);
+
+        if (existing is not null)
+        {
+            mapper.Map(userRole, existing);
+            existing.UpdatedAt = DateTime.UtcNow;
+            await repository.UpdateAsync(existing);
+            return mapper.Map<UserRoleForResultDto>(existing);
+        }
+
         var mappedUserRole = mapper.Map<UserRole>(userRole);
         mappedUserRole.CreatedAt = DateTime.UtcNow;
 
         await repository.InsertAsync(mappedUserRole);
-
         return mapper.Map<UserRoleForResultDto>(mappedUserRole);
     }
+
 
     public async Task<bool> DeleteUserRoleAsync(long id)
     {
@@ -78,22 +89,21 @@ public class UserRoleService : IUserRoleService
         var user = await userService.RetrieveByIdasync(userRole.UserId)
             ?? throw new TechStationException(404, "User not found");
 
-        var check = await repository.SelectAll()
-                                         .Where(ur => ur.Id == id)
-                                         .AsNoTracking()
-                                         .FirstOrDefaultAsync()
-                                         ?? throw new TechStationException(404, "UserRole not found");
+        var existing = await repository.SelectAll()
+            .FirstOrDefaultAsync(ur => ur.UserId == userRole.UserId);
 
-        var entity = await repository.SelectAll()
-                                         .Where(ur => ur.UserId == userRole.UserId && ur.Role == userRole.Role)
-                                         .AsNoTracking()
-                                         .FirstOrDefaultAsync()
-                                         ?? throw new TechStationException(409, "UserRole already exists");
+        if (existing is not null && existing.Id != id)
+            throw new TechStationException(409, "A different UserRole with this UserId and Role already exists");
 
-        var mappedUserRole = mapper.Map(userRole, check);
-        mappedUserRole.UpdatedAt = DateTime.UtcNow;
-        await repository.UpdateAsync(mappedUserRole);
+        var toUpdate = await repository.SelectAll()
+            .FirstOrDefaultAsync(ur => ur.Id == id)
+            ?? throw new TechStationException(404, "UserRole not found");
 
-        return mapper.Map<UserRoleForResultDto>(mappedUserRole);
+        mapper.Map(userRole, toUpdate);
+        toUpdate.UpdatedAt = DateTime.UtcNow;
+        await repository.UpdateAsync(toUpdate);
+
+        return mapper.Map<UserRoleForResultDto>(toUpdate);
     }
+
 }
