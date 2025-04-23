@@ -3,7 +3,7 @@ using TechStation.Domain.Entities;
 
 namespace TechStation.Data.DbContexts.SeedDatas.Categories;
 
-public static class SeedCategory
+public class SeedCategory
 {
     public static void SeedDataCategory(ModelBuilder builder)
     {

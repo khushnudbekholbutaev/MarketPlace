@@ -3,7 +3,7 @@ using TechStation.Domain.Entities;
 
 namespace TechStation.Data.DbContexts.SeedDatas.CartItems;
 
-public static class SeedCartItem
+public class SeedCartItem
 {
     public static void SeedDataCartItem(ModelBuilder builder)
     {

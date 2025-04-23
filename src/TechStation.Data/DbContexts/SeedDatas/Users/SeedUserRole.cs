@@ -4,7 +4,7 @@ using TechStation.Domain.Enums;
 
 namespace TechStation.Data.DbContexts.SeedDatas.Users;
 
-public static class SeedUserRole
+public  class SeedUserRole
 {
     public static void SeedDataUserRole(ModelBuilder builder)
     {
