@@ -31,6 +31,12 @@ public class AppDbContext : DbContext
     public DbSet<CartItem> CartItems { get; set; }
     public DbSet<Favourite> Favorites { get; set; }
 
+    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //{
+    //    optionsBuilder
+    //        .ConfigureWarnings(warnings =>
+    //            warnings.Ignore(Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.PendingModelChangesWarning));
+    //}
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -135,6 +141,22 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Product>().Property(p => p.Price).HasPrecision(18, 2);
 
         
+
+        SeedData(modelBuilder);
+    }
+
+    private static void SeedData(ModelBuilder modelBuilder)
+    {
+        SeedBanner.SeedDataBanner(modelBuilder);
+        SeedBrend.SeedDataBrend(modelBuilder);
+        SeedCartItem.SeedDataCartItem(modelBuilder);
+        SeedCatalog.SeedDataCatalog(modelBuilder);
+        SeedCategory.SeedDataCategory(modelBuilder);
+        SeedOrder.SeedDataOrder(modelBuilder);
+        SeedPayment.SeedDataPayment(modelBuilder);
+        SeedProduct.SeedDataProduct(modelBuilder);
+        SeedUser.SeedDataUser(modelBuilder);
+        SeedUserRole.SeedDataUserRole(modelBuilder);
     }
 
 }

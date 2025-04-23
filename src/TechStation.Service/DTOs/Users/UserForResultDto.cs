@@ -15,6 +15,7 @@ public class UserForResultDto
     public string Password { get; set; }
     public string UserName { get; set; }
     public string PhoneNumber { get; set; }
+    public Role Role { get; set; }
     public ICollection<OrderForResultDto> Orders { get; set; }
     public ICollection<RefreshToken> RefreshTokens { get; set; }
     public ICollection<CartItemForResultDto> CartItems { get; set; }
