@@ -141,6 +141,7 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Product>().Property(p => p.Price).HasPrecision(18, 2);
 
         
+
         SeedData(modelBuilder);
     }
 
@@ -156,7 +157,6 @@ public class AppDbContext : DbContext
         SeedProduct.SeedDataProduct(modelBuilder);
         SeedUser.SeedDataUser(modelBuilder);
         SeedUserRole.SeedDataUserRole(modelBuilder);
-
     }
 
 }
