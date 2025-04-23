@@ -3,7 +3,7 @@ using TechStation.Domain.Entities;
 
 namespace TechStation.Data.DbContexts.SeedDatas.Banners;
 
-public static class SeedBanner
+public class SeedBanner
 {
     public static void SeedDataBanner(ModelBuilder builder)
     {
