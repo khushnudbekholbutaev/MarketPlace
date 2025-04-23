@@ -135,19 +135,9 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Product>().Property(p => p.Price).HasPrecision(18, 2);
 
         
-      //  SeedData(modelBuilder);
     }
 
-        SeedBanner.SeedDataBanner(modelBuilder);
-        SeedBrend.SeedDataBrend(modelBuilder);
-        SeedCartItem.SeedDataCartItem(modelBuilder);
-        SeedCatalog.SeedDataCatalog(modelBuilder);
-        SeedCategory.SeedDataCategory(modelBuilder);
-        SeedOrder.SeedDataOrder(modelBuilder);
-        SeedPayment.SeedDataPayment(modelBuilder);
-        SeedProduct.SeedDataProduct(modelBuilder);
-        SeedUser.SeedDataUser(modelBuilder);
-        SeedUserRole.SeedDataUserRole(modelBuilder);
+
 
     }
 
