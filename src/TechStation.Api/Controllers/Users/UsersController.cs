@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using TechStation.Api.Helpers;
 using TechStation.Domain.Configurations;
 using TechStation.Service.DTOs.Users;
@@ -37,6 +38,7 @@ public class UsersController : BaseController
     /// <param name="@params">Optional pagination parameters for controlling the result set.</param>
     /// <returns>Returns an IActionResult with the result of the retrieval operation.</returns>
     [HttpGet]
+    [Authorize(Roles = "admin,superAdmin")]
     public async Task<IActionResult> GetAllAsync([FromQuery] PaginationParams @params)
     {
         // Foydalanuvchilarni (User) olish
@@ -71,6 +73,7 @@ public class UsersController : BaseController
     /// <param name="id">The unique identifier of the user to be retrieved.</param>
     /// <returns>Returns an IActionResult with the result of the retrieval operation.</returns>
     [HttpGet("{id}")]
+    [Authorize(Roles = "admin,superAdmin")]
     public async Task<IActionResult> GetByIdAsync([FromRoute] long id)
     {
         return Ok(new Response
@@ -88,6 +91,7 @@ public class UsersController : BaseController
     /// <param name="id">The unique identifier of the user to be removed.</param>
     /// <returns>Returns an IActionResult with the result of the removal operation.</returns>
     [HttpDelete("{id}")]
+    [Authorize(Roles = "admin,superAdmin")]
     public async Task<IActionResult> DeleteAsync([FromRoute] long id)
     {
         return Ok(new Response

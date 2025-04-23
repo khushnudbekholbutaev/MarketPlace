@@ -31,6 +31,12 @@ public class AppDbContext : DbContext
     public DbSet<CartItem> CartItems { get; set; }
     public DbSet<Favourite> Favorites { get; set; }
 
+    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //{
+    //    optionsBuilder
+    //        .ConfigureWarnings(warnings =>
+    //            warnings.Ignore(Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.PendingModelChangesWarning));
+    //}
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -134,8 +140,9 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Payment>().Property(p => p.Amount).HasPrecision(18, 2);
         modelBuilder.Entity<Product>().Property(p => p.Price).HasPrecision(18, 2);
         
-      //  SeedData(modelBuilder);
+        SeedData(modelBuilder);
     }
+
 
     private static void SeedData(ModelBuilder modelBuilder)
     {

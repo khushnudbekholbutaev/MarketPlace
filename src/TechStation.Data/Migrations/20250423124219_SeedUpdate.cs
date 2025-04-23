@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace TechStation.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class UserRole : Migration
+    public partial class SeedUpdate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -332,11 +332,11 @@ namespace TechStation.Data.Migrations
                 columns: new[] { "Id", "BrendName", "CreatedAt", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1L, "Dell", new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(9255), new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(9257) },
-                    { 2L, "Logitech", new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(9258), new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(9259) },
-                    { 3L, "Corsair", new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(9260), new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(9260) },
-                    { 4L, "HP", new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(9261), new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(9261) },
-                    { 5L, "Samsung", new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(9262), new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(9263) }
+                    { 1L, "Dell", new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(3778), new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(3779) },
+                    { 2L, "Logitech", new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(3780), new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(3781) },
+                    { 3L, "Corsair", new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(3781), new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(3782) },
+                    { 4L, "HP", new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(3782), new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(3783) },
+                    { 5L, "Samsung", new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(3784), new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(3784) }
                 });
 
             migrationBuilder.InsertData(
@@ -344,9 +344,9 @@ namespace TechStation.Data.Migrations
                 columns: new[] { "Id", "CreatedAt", "Name", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1L, new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(4252), "Computers & Laptops", new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(4252) },
-                    { 2L, new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(4254), "Gaming & Peripherals", new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(4254) },
-                    { 3L, new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(4256), "Monitors & Displays", new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(4256) }
+                    { 1L, new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(7528), "Computers & Laptops", new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(7528) },
+                    { 2L, new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(7530), "Gaming & Peripherals", new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(7530) },
+                    { 3L, new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(7531), "Monitors & Displays", new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(7531) }
                 });
 
             migrationBuilder.InsertData(
@@ -354,11 +354,11 @@ namespace TechStation.Data.Migrations
                 columns: new[] { "Id", "Amount", "CreatedAt", "PaymentMethod", "Status", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1L, 999.99m, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(2207), "Credit Card", 1, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(2207) },
-                    { 2L, 259.98m, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(2209), "PayPal", 2, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(2210) },
-                    { 3L, 199.99m, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(2211), "Credit Card", 1, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(2212) },
-                    { 4L, 1399.99m, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(2213), "Credit Card", 1, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(2214) },
-                    { 5L, 749.99m, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(2215), "PayPal", 2, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(2215) }
+                    { 1L, 999.99m, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(4082), "Credit Card", 1, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(4083) },
+                    { 2L, 259.98m, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(4085), "PayPal", 2, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(4085) },
+                    { 3L, 199.99m, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(4087), "Credit Card", 1, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(4087) },
+                    { 4L, 1399.99m, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(4088), "Credit Card", 1, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(4088) },
+                    { 5L, 749.99m, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(4089), "PayPal", 2, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(4090) }
                 });
 
             migrationBuilder.InsertData(
@@ -366,11 +366,11 @@ namespace TechStation.Data.Migrations
                 columns: new[] { "Id", "CreatedAt", "Email", "FirstName", "LastName", "Password", "PhoneNumber", "Role", "UpdatedAt", "UserName" },
                 values: new object[,]
                 {
-                    { 1L, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(8733), "john@example.com", "John", "Doe", "Password123", "123-456-7890", 0, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(8733), "johndoe" },
-                    { 2L, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(8736), "jane@example.com", "Jane", "Smith", "Password123", "123-456-7890", 0, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(8737), "janesmith" },
-                    { 3L, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(8739), "alice@example.com", "Alice", "Johnson", "Password123", "123-456-7890", 0, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(8739), "alicejohnson" },
-                    { 4L, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(8741), "bob@example.com", "Bob", "Brown", "Password123", "123-456-7890", 0, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(8741), "bobbrown" },
-                    { 5L, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(8742), "charlie@example.com", "Charlie", "Davis", "Password123", "123-456-7890", 0, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(8743), "charliedavis" }
+                    { 1L, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(9542), "xurshid@example.com", "Xurshid", "Oqmonov", "Password123", "+998935000000", 2, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(9542), "VanTux" },
+                    { 2L, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(9644), "abdulbosit@example.com", "Abdulbosit", "Abdullayev", "Password123", "+998901234567", 3, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(9644), "abdulbosit" },
+                    { 3L, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(9646), "dilshod@example.com", "Dilshod", "Karimov", "Password123", "+998931112233", 1, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(9646), "dilshodk" },
+                    { 4L, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(9648), "nigora@example.com", "Nigora", "Yusupova", "Password123", "+998947654321", 1, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(9648), "nigora" },
+                    { 5L, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(9650), "javohir@example.com", "Javohir", "Toirov", "Password123", "+998933334455", 1, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(9650), "javohirt" }
                 });
 
             migrationBuilder.InsertData(
@@ -378,11 +378,11 @@ namespace TechStation.Data.Migrations
                 columns: new[] { "Id", "CatalogId", "CategoryName", "CreatedAt", "Description", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1L, 1L, "Laptops", new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(6534), "Portable computers for work and play", new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(6534) },
-                    { 2L, 1L, "Accessories", new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(6536), "Computer accessories including mice, keyboards, and more", new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(6537) },
-                    { 3L, 2L, "Gaming", new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(6538), "Gaming equipment including chairs, desks, and peripherals", new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(6538) },
-                    { 4L, 1L, "Monitors", new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(6540), "High-quality monitors for work and entertainment", new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(6540) },
-                    { 5L, 1L, "Desktops", new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(6541), "Powerful desktop computers for gaming and work", new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(6542) }
+                    { 1L, 1L, "Laptops", new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(9430), "Portable computers for work and play", new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(9431) },
+                    { 2L, 1L, "Accessories", new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(9433), "Computer accessories including mice, keyboards, and more", new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(9433) },
+                    { 3L, 2L, "Gaming", new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(9434), "Gaming equipment including chairs, desks, and peripherals", new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(9434) },
+                    { 4L, 1L, "Monitors", new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(9435), "High-quality monitors for work and entertainment", new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(9436) },
+                    { 5L, 1L, "Desktops", new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(9436), "Powerful desktop computers for gaming and work", new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(9437) }
                 });
 
             migrationBuilder.InsertData(
@@ -390,11 +390,11 @@ namespace TechStation.Data.Migrations
                 columns: new[] { "Id", "CreatedAt", "Role", "UpdatedAt", "UserId" },
                 values: new object[,]
                 {
-                    { 1L, new DateTime(2025, 4, 23, 7, 33, 28, 203, DateTimeKind.Utc).AddTicks(803), 2, new DateTime(2025, 4, 23, 7, 33, 28, 203, DateTimeKind.Utc).AddTicks(804), 1L },
-                    { 2L, new DateTime(2025, 4, 23, 7, 33, 28, 203, DateTimeKind.Utc).AddTicks(806), 1, new DateTime(2025, 4, 23, 7, 33, 28, 203, DateTimeKind.Utc).AddTicks(806), 2L },
-                    { 3L, new DateTime(2025, 4, 23, 7, 33, 28, 203, DateTimeKind.Utc).AddTicks(808), 1, new DateTime(2025, 4, 23, 7, 33, 28, 203, DateTimeKind.Utc).AddTicks(808), 3L },
-                    { 4L, new DateTime(2025, 4, 23, 7, 33, 28, 203, DateTimeKind.Utc).AddTicks(809), 3, new DateTime(2025, 4, 23, 7, 33, 28, 203, DateTimeKind.Utc).AddTicks(809), 4L },
-                    { 5L, new DateTime(2025, 4, 23, 7, 33, 28, 203, DateTimeKind.Utc).AddTicks(811), 1, new DateTime(2025, 4, 23, 7, 33, 28, 203, DateTimeKind.Utc).AddTicks(811), 5L }
+                    { 1L, new DateTime(2025, 4, 23, 12, 42, 19, 129, DateTimeKind.Utc).AddTicks(1425), 2, new DateTime(2025, 4, 23, 12, 42, 19, 129, DateTimeKind.Utc).AddTicks(1425), 1L },
+                    { 2L, new DateTime(2025, 4, 23, 12, 42, 19, 129, DateTimeKind.Utc).AddTicks(1427), 3, new DateTime(2025, 4, 23, 12, 42, 19, 129, DateTimeKind.Utc).AddTicks(1427), 2L },
+                    { 3L, new DateTime(2025, 4, 23, 12, 42, 19, 129, DateTimeKind.Utc).AddTicks(1428), 1, new DateTime(2025, 4, 23, 12, 42, 19, 129, DateTimeKind.Utc).AddTicks(1428), 3L },
+                    { 4L, new DateTime(2025, 4, 23, 12, 42, 19, 129, DateTimeKind.Utc).AddTicks(1429), 1, new DateTime(2025, 4, 23, 12, 42, 19, 129, DateTimeKind.Utc).AddTicks(1430), 4L },
+                    { 5L, new DateTime(2025, 4, 23, 12, 42, 19, 129, DateTimeKind.Utc).AddTicks(1430), 1, new DateTime(2025, 4, 23, 12, 42, 19, 129, DateTimeKind.Utc).AddTicks(1431), 5L }
                 });
 
             migrationBuilder.InsertData(
@@ -402,11 +402,11 @@ namespace TechStation.Data.Migrations
                 columns: new[] { "Id", "BrendId", "CategoryId", "CreatedAt", "Images", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1L, 1L, 1L, new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(2788), "banner_computers.jpg", new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(2917) },
-                    { 2L, 2L, 2L, new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(3008), "banner_accessories.jpg", new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(3008) },
-                    { 3L, 3L, 3L, new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(3010), "banner_gaming.jpg", new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(3010) },
-                    { 4L, 4L, 1L, new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(3011), "banner_laptops.jpg", new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(3012) },
-                    { 5L, 5L, 2L, new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(3013), "banner_monitors.jpg", new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(3013) }
+                    { 1L, 1L, 1L, new DateTime(2025, 4, 23, 12, 42, 19, 126, DateTimeKind.Utc).AddTicks(8320), "banner_computers.jpg", new DateTime(2025, 4, 23, 12, 42, 19, 126, DateTimeKind.Utc).AddTicks(8428) },
+                    { 2L, 2L, 2L, new DateTime(2025, 4, 23, 12, 42, 19, 126, DateTimeKind.Utc).AddTicks(8504), "banner_accessories.jpg", new DateTime(2025, 4, 23, 12, 42, 19, 126, DateTimeKind.Utc).AddTicks(8505) },
+                    { 3L, 3L, 3L, new DateTime(2025, 4, 23, 12, 42, 19, 126, DateTimeKind.Utc).AddTicks(8506), "banner_gaming.jpg", new DateTime(2025, 4, 23, 12, 42, 19, 126, DateTimeKind.Utc).AddTicks(8507) },
+                    { 4L, 4L, 1L, new DateTime(2025, 4, 23, 12, 42, 19, 126, DateTimeKind.Utc).AddTicks(8507), "banner_laptops.jpg", new DateTime(2025, 4, 23, 12, 42, 19, 126, DateTimeKind.Utc).AddTicks(8508) },
+                    { 5L, 5L, 2L, new DateTime(2025, 4, 23, 12, 42, 19, 126, DateTimeKind.Utc).AddTicks(8509), "banner_monitors.jpg", new DateTime(2025, 4, 23, 12, 42, 19, 126, DateTimeKind.Utc).AddTicks(8509) }
                 });
 
             migrationBuilder.InsertData(
@@ -414,11 +414,11 @@ namespace TechStation.Data.Migrations
                 columns: new[] { "Id", "BrendId", "CategoryId", "CreatedAt", "Description", "Images", "Price", "ProductName", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1L, 1L, 1L, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(5837), "A powerful and sleek laptop for professionals.", "dell_xps_13.jpg", 999.99m, "Dell XPS 13", new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(5838) },
-                    { 2L, 2L, 2L, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(5841), "A high-performance gaming mouse.", "logitech_g_pro_x.jpg", 129.99m, "Logitech G Pro X", new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(5841) },
-                    { 3L, 3L, 2L, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(5843), "Mechanical gaming keyboard with RGB lighting.", "corsair_k95_rgb_platinum.jpg", 199.99m, "Corsair K95 RGB Platinum", new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(5843) },
-                    { 4L, 4L, 1L, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(5845), "A gaming laptop with top-tier specs.", "hp_omen_15.jpg", 1399.99m, "HP Omen 15", new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(5845) },
-                    { 5L, 5L, 4L, new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(5847), "A curved gaming monitor with 240Hz refresh rate.", "samsung_odyssey_g7.jpg", 749.99m, "Samsung Odyssey G7", new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(5847) }
+                    { 1L, 1L, 1L, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(6893), "A powerful and sleek laptop for professionals.", "dell_xps_13.jpg", 999.99m, "Dell XPS 13", new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(6894) },
+                    { 2L, 2L, 2L, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(6897), "A high-performance gaming mouse.", "logitech_g_pro_x.jpg", 129.99m, "Logitech G Pro X", new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(6897) },
+                    { 3L, 3L, 2L, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(6898), "Mechanical gaming keyboard with RGB lighting.", "corsair_k95_rgb_platinum.jpg", 199.99m, "Corsair K95 RGB Platinum", new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(6899) },
+                    { 4L, 4L, 1L, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(6900), "A gaming laptop with top-tier specs.", "hp_omen_15.jpg", 1399.99m, "HP Omen 15", new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(6900) },
+                    { 5L, 5L, 4L, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(6902), "A curved gaming monitor with 240Hz refresh rate.", "samsung_odyssey_g7.jpg", 749.99m, "Samsung Odyssey G7", new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(6902) }
                 });
 
             migrationBuilder.InsertData(
@@ -426,11 +426,11 @@ namespace TechStation.Data.Migrations
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Quantity", "UpdatedAt", "UserId" },
                 values: new object[,]
                 {
-                    { 1L, new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(2212), 1L, 1m, new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(2213), 1L },
-                    { 2L, new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(2231), 2L, 2m, new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(2231), 2L },
-                    { 3L, new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(2232), 3L, 1m, new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(2233), 3L },
-                    { 4L, new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(2234), 4L, 1m, new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(2234), 4L },
-                    { 5L, new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(2235), 5L, 1m, new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(2236), 5L }
+                    { 1L, new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(6186), 1L, 1m, new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(6187), 1L },
+                    { 2L, new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(6201), 2L, 2m, new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(6202), 2L },
+                    { 3L, new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(6203), 3L, 1m, new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(6203), 3L },
+                    { 4L, new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(6204), 4L, 1m, new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(6205), 4L },
+                    { 5L, new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(6206), 5L, 1m, new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(6206), 5L }
                 });
 
             migrationBuilder.InsertData(
@@ -438,11 +438,11 @@ namespace TechStation.Data.Migrations
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Quantity", "TotalAmount", "UpdatedAt", "UserId" },
                 values: new object[,]
                 {
-                    { 1L, new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(9511), 1L, 1, 999.99m, new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(9511), 1L },
-                    { 2L, new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(9514), 2L, 2, 259.98m, new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(9514), 2L },
-                    { 3L, new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(9516), 3L, 1, 199.99m, new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(9517), 3L },
-                    { 4L, new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(9518), 4L, 1, 1399.99m, new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(9519), 4L },
-                    { 5L, new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(9520), 5L, 1, 749.99m, new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(9521), 5L }
+                    { 1L, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(1858), 1L, 1, 999.99m, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(1858), 1L },
+                    { 2L, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(1861), 2L, 2, 259.98m, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(1861), 2L },
+                    { 3L, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(1862), 3L, 1, 199.99m, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(1863), 3L },
+                    { 4L, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(1864), 4L, 1, 1399.99m, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(1864), 4L },
+                    { 5L, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(1865), 5L, 1, 749.99m, new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(1866), 5L }
                 });
 
             migrationBuilder.CreateIndex(

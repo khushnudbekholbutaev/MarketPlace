@@ -60,45 +60,45 @@ namespace TechStation.Data.Migrations
                             Id = 1L,
                             BrendId = 1L,
                             CategoryId = 1L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(2788),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 126, DateTimeKind.Utc).AddTicks(8320),
                             Images = "banner_computers.jpg",
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(2917)
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 126, DateTimeKind.Utc).AddTicks(8428)
                         },
                         new
                         {
                             Id = 2L,
                             BrendId = 2L,
                             CategoryId = 2L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(3008),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 126, DateTimeKind.Utc).AddTicks(8504),
                             Images = "banner_accessories.jpg",
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(3008)
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 126, DateTimeKind.Utc).AddTicks(8505)
                         },
                         new
                         {
                             Id = 3L,
                             BrendId = 3L,
                             CategoryId = 3L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(3010),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 126, DateTimeKind.Utc).AddTicks(8506),
                             Images = "banner_gaming.jpg",
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(3010)
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 126, DateTimeKind.Utc).AddTicks(8507)
                         },
                         new
                         {
                             Id = 4L,
                             BrendId = 4L,
                             CategoryId = 1L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(3011),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 126, DateTimeKind.Utc).AddTicks(8507),
                             Images = "banner_laptops.jpg",
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(3012)
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 126, DateTimeKind.Utc).AddTicks(8508)
                         },
                         new
                         {
                             Id = 5L,
                             BrendId = 5L,
                             CategoryId = 2L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(3013),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 126, DateTimeKind.Utc).AddTicks(8509),
                             Images = "banner_monitors.jpg",
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(3013)
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 126, DateTimeKind.Utc).AddTicks(8509)
                         });
                 });
 
@@ -129,36 +129,36 @@ namespace TechStation.Data.Migrations
                         {
                             Id = 1L,
                             BrendName = "Dell",
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(9255),
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(9257)
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(3778),
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(3779)
                         },
                         new
                         {
                             Id = 2L,
                             BrendName = "Logitech",
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(9258),
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(9259)
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(3780),
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(3781)
                         },
                         new
                         {
                             Id = 3L,
                             BrendName = "Corsair",
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(9260),
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(9260)
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(3781),
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(3782)
                         },
                         new
                         {
                             Id = 4L,
                             BrendName = "HP",
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(9261),
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(9261)
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(3782),
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(3783)
                         },
                         new
                         {
                             Id = 5L,
                             BrendName = "Samsung",
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(9262),
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 200, DateTimeKind.Utc).AddTicks(9263)
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(3784),
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(3784)
                         });
                 });
 
@@ -197,46 +197,46 @@ namespace TechStation.Data.Migrations
                         new
                         {
                             Id = 1L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(2212),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(6186),
                             ProductId = 1L,
                             Quantity = 1m,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(2213),
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(6187),
                             UserId = 1L
                         },
                         new
                         {
                             Id = 2L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(2231),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(6201),
                             ProductId = 2L,
                             Quantity = 2m,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(2231),
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(6202),
                             UserId = 2L
                         },
                         new
                         {
                             Id = 3L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(2232),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(6203),
                             ProductId = 3L,
                             Quantity = 1m,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(2233),
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(6203),
                             UserId = 3L
                         },
                         new
                         {
                             Id = 4L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(2234),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(6204),
                             ProductId = 4L,
                             Quantity = 1m,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(2234),
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(6205),
                             UserId = 4L
                         },
                         new
                         {
                             Id = 5L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(2235),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(6206),
                             ProductId = 5L,
                             Quantity = 1m,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(2236),
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(6206),
                             UserId = 5L
                         });
                 });
@@ -267,23 +267,23 @@ namespace TechStation.Data.Migrations
                         new
                         {
                             Id = 1L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(4252),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(7528),
                             Name = "Computers & Laptops",
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(4252)
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(7528)
                         },
                         new
                         {
                             Id = 2L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(4254),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(7530),
                             Name = "Gaming & Peripherals",
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(4254)
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(7530)
                         },
                         new
                         {
                             Id = 3L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(4256),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(7531),
                             Name = "Monitors & Displays",
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(4256)
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(7531)
                         });
                 });
 
@@ -324,45 +324,45 @@ namespace TechStation.Data.Migrations
                             Id = 1L,
                             CatalogId = 1L,
                             CategoryName = "Laptops",
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(6534),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(9430),
                             Description = "Portable computers for work and play",
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(6534)
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(9431)
                         },
                         new
                         {
                             Id = 2L,
                             CatalogId = 1L,
                             CategoryName = "Accessories",
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(6536),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(9433),
                             Description = "Computer accessories including mice, keyboards, and more",
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(6537)
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(9433)
                         },
                         new
                         {
                             Id = 3L,
                             CatalogId = 2L,
                             CategoryName = "Gaming",
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(6538),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(9434),
                             Description = "Gaming equipment including chairs, desks, and peripherals",
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(6538)
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(9434)
                         },
                         new
                         {
                             Id = 4L,
                             CatalogId = 1L,
                             CategoryName = "Monitors",
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(6540),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(9435),
                             Description = "High-quality monitors for work and entertainment",
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(6540)
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(9436)
                         },
                         new
                         {
                             Id = 5L,
                             CatalogId = 1L,
                             CategoryName = "Desktops",
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(6541),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(9436),
                             Description = "Powerful desktop computers for gaming and work",
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(6542)
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 127, DateTimeKind.Utc).AddTicks(9437)
                         });
                 });
 
@@ -434,51 +434,51 @@ namespace TechStation.Data.Migrations
                         new
                         {
                             Id = 1L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(9511),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(1858),
                             ProductId = 1L,
                             Quantity = 1,
                             TotalAmount = 999.99m,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(9511),
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(1858),
                             UserId = 1L
                         },
                         new
                         {
                             Id = 2L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(9514),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(1861),
                             ProductId = 2L,
                             Quantity = 2,
                             TotalAmount = 259.98m,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(9514),
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(1861),
                             UserId = 2L
                         },
                         new
                         {
                             Id = 3L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(9516),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(1862),
                             ProductId = 3L,
                             Quantity = 1,
                             TotalAmount = 199.99m,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(9517),
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(1863),
                             UserId = 3L
                         },
                         new
                         {
                             Id = 4L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(9518),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(1864),
                             ProductId = 4L,
                             Quantity = 1,
                             TotalAmount = 1399.99m,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(9519),
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(1864),
                             UserId = 4L
                         },
                         new
                         {
                             Id = 5L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(9520),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(1865),
                             ProductId = 5L,
                             Quantity = 1,
                             TotalAmount = 749.99m,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 201, DateTimeKind.Utc).AddTicks(9521),
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(1866),
                             UserId = 5L
                         });
                 });
@@ -553,46 +553,46 @@ namespace TechStation.Data.Migrations
                         {
                             Id = 1L,
                             Amount = 999.99m,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(2207),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(4082),
                             PaymentMethod = "Credit Card",
                             Status = 1,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(2207)
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(4083)
                         },
                         new
                         {
                             Id = 2L,
                             Amount = 259.98m,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(2209),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(4085),
                             PaymentMethod = "PayPal",
                             Status = 2,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(2210)
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(4085)
                         },
                         new
                         {
                             Id = 3L,
                             Amount = 199.99m,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(2211),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(4087),
                             PaymentMethod = "Credit Card",
                             Status = 1,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(2212)
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(4087)
                         },
                         new
                         {
                             Id = 4L,
                             Amount = 1399.99m,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(2213),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(4088),
                             PaymentMethod = "Credit Card",
                             Status = 1,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(2214)
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(4088)
                         },
                         new
                         {
                             Id = 5L,
                             Amount = 749.99m,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(2215),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(4089),
                             PaymentMethod = "PayPal",
                             Status = 2,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(2215)
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(4090)
                         });
                 });
 
@@ -646,60 +646,60 @@ namespace TechStation.Data.Migrations
                             Id = 1L,
                             BrendId = 1L,
                             CategoryId = 1L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(5837),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(6893),
                             Description = "A powerful and sleek laptop for professionals.",
                             Images = "dell_xps_13.jpg",
                             Price = 999.99m,
                             ProductName = "Dell XPS 13",
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(5838)
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(6894)
                         },
                         new
                         {
                             Id = 2L,
                             BrendId = 2L,
                             CategoryId = 2L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(5841),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(6897),
                             Description = "A high-performance gaming mouse.",
                             Images = "logitech_g_pro_x.jpg",
                             Price = 129.99m,
                             ProductName = "Logitech G Pro X",
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(5841)
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(6897)
                         },
                         new
                         {
                             Id = 3L,
                             BrendId = 3L,
                             CategoryId = 2L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(5843),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(6898),
                             Description = "Mechanical gaming keyboard with RGB lighting.",
                             Images = "corsair_k95_rgb_platinum.jpg",
                             Price = 199.99m,
                             ProductName = "Corsair K95 RGB Platinum",
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(5843)
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(6899)
                         },
                         new
                         {
                             Id = 4L,
                             BrendId = 4L,
                             CategoryId = 1L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(5845),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(6900),
                             Description = "A gaming laptop with top-tier specs.",
                             Images = "hp_omen_15.jpg",
                             Price = 1399.99m,
                             ProductName = "HP Omen 15",
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(5845)
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(6900)
                         },
                         new
                         {
                             Id = 5L,
                             BrendId = 5L,
                             CategoryId = 4L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(5847),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(6902),
                             Description = "A curved gaming monitor with 240Hz refresh rate.",
                             Images = "samsung_odyssey_g7.jpg",
                             Price = 749.99m,
                             ProductName = "Samsung Odyssey G7",
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(5847)
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(6902)
                         });
                 });
 
@@ -783,67 +783,67 @@ namespace TechStation.Data.Migrations
                         new
                         {
                             Id = 1L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(8733),
-                            Email = "john@example.com",
-                            FirstName = "John",
-                            LastName = "Doe",
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(9542),
+                            Email = "xurshid@example.com",
+                            FirstName = "Xurshid",
+                            LastName = "Oqmonov",
                             Password = "Password123",
-                            PhoneNumber = "123-456-7890",
-                            Role = 0,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(8733),
-                            UserName = "johndoe"
+                            PhoneNumber = "+998935000000",
+                            Role = 2,
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(9542),
+                            UserName = "VanTux"
                         },
                         new
                         {
                             Id = 2L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(8736),
-                            Email = "jane@example.com",
-                            FirstName = "Jane",
-                            LastName = "Smith",
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(9644),
+                            Email = "abdulbosit@example.com",
+                            FirstName = "Abdulbosit",
+                            LastName = "Abdullayev",
                             Password = "Password123",
-                            PhoneNumber = "123-456-7890",
-                            Role = 0,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(8737),
-                            UserName = "janesmith"
+                            PhoneNumber = "+998901234567",
+                            Role = 3,
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(9644),
+                            UserName = "abdulbosit"
                         },
                         new
                         {
                             Id = 3L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(8739),
-                            Email = "alice@example.com",
-                            FirstName = "Alice",
-                            LastName = "Johnson",
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(9646),
+                            Email = "dilshod@example.com",
+                            FirstName = "Dilshod",
+                            LastName = "Karimov",
                             Password = "Password123",
-                            PhoneNumber = "123-456-7890",
-                            Role = 0,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(8739),
-                            UserName = "alicejohnson"
+                            PhoneNumber = "+998931112233",
+                            Role = 1,
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(9646),
+                            UserName = "dilshodk"
                         },
                         new
                         {
                             Id = 4L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(8741),
-                            Email = "bob@example.com",
-                            FirstName = "Bob",
-                            LastName = "Brown",
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(9648),
+                            Email = "nigora@example.com",
+                            FirstName = "Nigora",
+                            LastName = "Yusupova",
                             Password = "Password123",
-                            PhoneNumber = "123-456-7890",
-                            Role = 0,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(8741),
-                            UserName = "bobbrown"
+                            PhoneNumber = "+998947654321",
+                            Role = 1,
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(9648),
+                            UserName = "nigora"
                         },
                         new
                         {
                             Id = 5L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(8742),
-                            Email = "charlie@example.com",
-                            FirstName = "Charlie",
-                            LastName = "Davis",
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(9650),
+                            Email = "javohir@example.com",
+                            FirstName = "Javohir",
+                            LastName = "Toirov",
                             Password = "Password123",
-                            PhoneNumber = "123-456-7890",
-                            Role = 0,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 202, DateTimeKind.Utc).AddTicks(8743),
-                            UserName = "charliedavis"
+                            PhoneNumber = "+998933334455",
+                            Role = 1,
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 128, DateTimeKind.Utc).AddTicks(9650),
+                            UserName = "javohirt"
                         });
                 });
 
@@ -877,41 +877,41 @@ namespace TechStation.Data.Migrations
                         new
                         {
                             Id = 1L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 203, DateTimeKind.Utc).AddTicks(803),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 129, DateTimeKind.Utc).AddTicks(1425),
                             Role = 2,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 203, DateTimeKind.Utc).AddTicks(804),
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 129, DateTimeKind.Utc).AddTicks(1425),
                             UserId = 1L
                         },
                         new
                         {
                             Id = 2L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 203, DateTimeKind.Utc).AddTicks(806),
-                            Role = 1,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 203, DateTimeKind.Utc).AddTicks(806),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 129, DateTimeKind.Utc).AddTicks(1427),
+                            Role = 3,
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 129, DateTimeKind.Utc).AddTicks(1427),
                             UserId = 2L
                         },
                         new
                         {
                             Id = 3L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 203, DateTimeKind.Utc).AddTicks(808),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 129, DateTimeKind.Utc).AddTicks(1428),
                             Role = 1,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 203, DateTimeKind.Utc).AddTicks(808),
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 129, DateTimeKind.Utc).AddTicks(1428),
                             UserId = 3L
                         },
                         new
                         {
                             Id = 4L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 203, DateTimeKind.Utc).AddTicks(809),
-                            Role = 3,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 203, DateTimeKind.Utc).AddTicks(809),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 129, DateTimeKind.Utc).AddTicks(1429),
+                            Role = 1,
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 129, DateTimeKind.Utc).AddTicks(1430),
                             UserId = 4L
                         },
                         new
                         {
                             Id = 5L,
-                            CreatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 203, DateTimeKind.Utc).AddTicks(811),
+                            CreatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 129, DateTimeKind.Utc).AddTicks(1430),
                             Role = 1,
-                            UpdatedAt = new DateTime(2025, 4, 23, 7, 33, 28, 203, DateTimeKind.Utc).AddTicks(811),
+                            UpdatedAt = new DateTime(2025, 4, 23, 12, 42, 19, 129, DateTimeKind.Utc).AddTicks(1431),
                             UserId = 5L
                         });
                 });
