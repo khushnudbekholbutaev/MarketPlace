@@ -15,7 +15,7 @@ public class CategoriesController : BaseController
         this.categoryService = categoryService;
     }
     [HttpPost]
-    [Authorize(Roles = "admin,superAdmin")]
+    //[Authorize(Roles = "admin,superAdmin")]
     public async Task<IActionResult> InsertAsync([FromBody] CategoryForCreationDto dto)
     {
         return Ok(new Response
@@ -63,7 +63,7 @@ public class CategoriesController : BaseController
         });
     }
     [HttpDelete("{id}")]
-    [Authorize(Roles = "admin,superAdmin")]
+    //[Authorize(Roles = "admin,superAdmin")]
     public async Task<IActionResult> DeteleAsync([FromRoute] long id)
     {
         return Ok(new Response
@@ -74,7 +74,7 @@ public class CategoriesController : BaseController
         });
     }
     [HttpPut("{id}")]
-    [Authorize(Roles = "admin,superAdmin")]
+    //[Authorize(Roles = "admin,superAdmin")]
     public async Task<IActionResult> UpdateAsync([FromRoute] long id, [FromBody] CategoryForUpdateDto dto)
     {
         return Ok(new Response

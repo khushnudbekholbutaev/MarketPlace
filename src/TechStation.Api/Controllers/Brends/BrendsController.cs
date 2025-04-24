@@ -56,7 +56,7 @@ public class BrendsController : BaseController
         });
     }
     [HttpPost]
-    [Authorize(Roles = "admin,superAdmin")]
+    //[Authorize(Roles = "admin,superAdmin")]
     public async Task<IActionResult> AddAsync([FromBody] BrendForCreationDto dto)
     {
         return Ok(new Response
@@ -67,7 +67,7 @@ public class BrendsController : BaseController
         });
     }
     [HttpPut("{id}")]
-    [Authorize(Roles = "admin,superAdmin")]
+    //[Authorize(Roles = "admin,superAdmin")]
     public async Task<IActionResult> ModifyAsync(long id, [FromBody] BrendForUpdateDto dto)
     {
         return Ok(new Response
@@ -78,7 +78,7 @@ public class BrendsController : BaseController
         });
     }
     [HttpDelete("{id}")]
-    [Authorize(Roles = "admin,superAdmin")]
+    //[Authorize(Roles = "admin,superAdmin")]
     public async Task<IActionResult> DeleteAsync(long id)
     {
         return Ok(new Response

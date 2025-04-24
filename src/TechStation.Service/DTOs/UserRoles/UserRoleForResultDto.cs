@@ -1,10 +1,11 @@
 ﻿using TechStation.Domain.Enums;
+using TechStation.Service.DTOs.Users;
 
 namespace TechStation.Service.DTOs.UserRoles;
 
 public class UserRoleForResultDto
 {
-    public long Id { get; set; }
-    public long UserId { get; set; }
     public Role Role { get; set; }
+    public long UserId { get; set; }
+    public UserForResultDto User { get; set; }
 }

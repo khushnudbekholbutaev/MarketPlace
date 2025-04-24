@@ -1,9 +1,12 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using TechStation.Data.IRepositories;
+using TechStation.Data.Repositories;
 using TechStation.Domain.Configurations;
 using TechStation.Domain.Entities;
+using TechStation.Domain.Enums;
 using TechStation.Service.Commons.CollectionExtensions;
+using TechStation.Service.DTOs.UserRoles;
 using TechStation.Service.DTOs.Users;
 using TechStation.Service.Exceptions;
 using TechStation.Service.Interfaces.Users;
@@ -30,6 +33,7 @@ public class UserService : IUserService
             throw new TechStationException(409, "User is already exists");
 
         var mapped = mapper.Map<User>(dto);
+        mapped.Role = Role.user;
         mapped.CreatedAt = DateTime.UtcNow;
         await userRepository.InsertAsync(mapped);
 
@@ -97,5 +101,22 @@ public class UserService : IUserService
             throw new TechStationException(404, "User is not found!");
 
         return mapper.Map<UserForResultDto>(user);
+    }
+
+    public async Task<UserRoleForResultDto> AssignRoleToUser(UserRoleForCreationDto dto)
+    {
+        var user = await userRepository.SelectByIdAsync(dto.UserId);
+        if (user == null)
+            throw new TechStationException(404, "User not found");
+        user.Role = dto.Role;
+
+        await userRepository.UpdateAsync(user);
+
+        return new UserRoleForResultDto
+        {
+            UserId = user.Id,
+            User = mapper.Map<UserForResultDto>(user),
+            Role = user.Role
+        };
     }
 }

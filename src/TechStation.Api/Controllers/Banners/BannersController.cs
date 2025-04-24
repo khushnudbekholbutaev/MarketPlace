@@ -34,7 +34,7 @@ public class BannersController : BaseController
         });
     }
     [HttpPost]
-    [Authorize(Roles = "admin,superAdmin")]
+    //[Authorize(Roles = "admin,superAdmin")]
     public async Task<IActionResult> AddAsync([FromForm] BannerForCreationDto dto)
     {
         return Ok(new Response
@@ -45,7 +45,7 @@ public class BannersController : BaseController
         });
     }
     [HttpPut("{id}")]
-    [Authorize(Roles = "admin,superAdmin")]
+    //[Authorize(Roles = "admin,superAdmin")]
     public async Task<IActionResult> ModifyAsync(long id,[FromBody] BannerForUpdateDto dto)
     {
         return Ok(new Response
@@ -56,7 +56,7 @@ public class BannersController : BaseController
         });
     }
     [HttpDelete("{id}")]
-    [Authorize(Roles = "admin,superAdmin")]
+    //[Authorize(Roles = "admin,superAdmin")]
     public async Task<IActionResult> DeleteAsync(long id)
     {
         return Ok(new Response

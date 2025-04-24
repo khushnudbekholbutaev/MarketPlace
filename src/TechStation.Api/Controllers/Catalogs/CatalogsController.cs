@@ -17,7 +17,7 @@ public class CatalogsController : BaseController
     }
 
     [HttpPost]
-    [Authorize(Roles = "admin,superAdmin")]
+    //[Authorize(Roles = "admin,superAdmin")]
     public async Task<IActionResult> InsertAsync([FromBody] CatalogForCreationDto dto)
     {
         return Ok(new Response
@@ -66,7 +66,7 @@ public class CatalogsController : BaseController
         });
     }
     [HttpDelete("{id}")]
-    [Authorize(Roles = "admin,superAdmin")]
+    //[Authorize(Roles = "admin,superAdmin")]
     public async Task<IActionResult> DeleteAsync([FromRoute] long id)
     {
         return Ok(new Response
@@ -77,7 +77,7 @@ public class CatalogsController : BaseController
         });
     }
     [HttpPut("{id}")]
-    [Authorize(Roles = "admin,superAdmin")]
+    //[Authorize(Roles = "admin,superAdmin")]
     public async Task<IActionResult> UpdateAsync([FromRoute] long id, [FromBody] CatalogForUpdateDto dto)
     {
         return Ok(new Response

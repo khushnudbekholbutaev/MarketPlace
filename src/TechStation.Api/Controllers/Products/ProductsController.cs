@@ -79,7 +79,7 @@ public class ProductsController : BaseController
         });
     }
     [HttpPost]
-    [Authorize(Roles = "admin,superAdmin")]
+    //[Authorize(Roles = "admin,superAdmin")]
     public async Task<IActionResult> AddAsync([FromForm] ProductForCreationDto dto)
     {
         return Ok(new Response
@@ -90,7 +90,7 @@ public class ProductsController : BaseController
         });
     }
     [HttpPut("{id}")]
-    [Authorize(Roles = "admin,superAdmin")]
+    //[Authorize(Roles = "admin,superAdmin")]
     public async Task<IActionResult> ModifyAsync(long id, [FromBody] ProductForUpdateDto dto)
     {
         return Ok(new Response
@@ -102,7 +102,7 @@ public class ProductsController : BaseController
     }
 
     [HttpDelete("{id}")]
-    [Authorize(Roles = "admin,superAdmin")]
+    //[Authorize(Roles = "admin,superAdmin")]
     public async Task<IActionResult> RemoveAsync(long id)
     {
         return Ok(new Response
