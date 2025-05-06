@@ -130,6 +130,7 @@ public class BannerService : IBannerService
         #endregion
         var mapped = mapper.Map(dto,banner);
         mapped.UpdatedAt = DateTime.UtcNow;
+        mapped.Images = imagesString;
         await bannerRepository.UpdateAsync(mapped);
 
         return mapper.Map<BannerForResultDto>(dto);
