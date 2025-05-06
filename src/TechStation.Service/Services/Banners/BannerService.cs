@@ -80,6 +80,7 @@ public class BannerService : IBannerService
 
         var mapped = mapper.Map<Banner>(dto);
         mapped.CreatedAt = DateTime.UtcNow;
+        mapped.Images = imagesString;
         await bannerRepository.InsertAsync(mapped);
 
         return mapper.Map<BannerForResultDto>(mapped);
