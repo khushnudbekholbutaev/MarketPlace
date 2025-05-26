@@ -35,8 +35,8 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          source: "./docker-compose.prod.yml"
-          target: "/opt/MarketPlace/docker-compose.yml"
+          source: "./docker-compose.yml"
+          target: "/opt/MarketPlace/docker-compose.org.yml"
 
       - uses: appleboy/ssh-action@v1
         with:
@@ -49,7 +49,7 @@ jobs:
 
             echo "${{ secrets.REGISTRY_TOKEN }}" | docker login registry.digitalocean.com -u ${{ secrets.REGISTRY_USERNAME }} --password-stdin
 
-            yq -i '.services.web.image = "${{ needs.build.outputs.image_name }}"' docker-compose.yaml
+            yq -i '.services.web.image = "${{ needs.build.outputs.image_name }}"' docker-compose.org.yaml
 
             docker compose pull
             docker compose down
