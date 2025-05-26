@@ -10,7 +10,7 @@ services:
       - "5434:5432"
 
   app:
-    image: registry.digitalocean.com/image-register/market-place:80de4b9053947bcd9c6955377de492736186619a
+    image: registry.digitalocean.com/image-register/market-place:tag
     depends_on:
       - db
     ports:
