@@ -1,27 +1,32 @@
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-USER $APP_UID
-WORKDIR /app
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+
 EXPOSE 8080
 
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-ARG BUILD_CONFIGURATION=Release
-WORKDIR /src
-COPY ["src/TechStation.Api/TechStation.Api.csproj", "src/TechStation.Api/"]
-COPY ["src/TechStation.Data/TechStation.Data.csproj", "src/TechStation.Data/"]
-COPY ["src/TechStation.Domain/TechStation.Domain.csproj", "src/TechStation.Domain/"]
-COPY ["src/TechStation.Service/TechStation.Service.csproj", "src/TechStation.Service/"]
-RUN dotnet restore "./src/TechStation.Api/TechStation.Api.csproj"
+# Barcha loyiha fayllarini nusxa ko'chirish
+COPY TechStation.Api/*.csproj TechStation.Api/
+COPY TechStation.Service/*.csproj TechStation.Service/
+COPY TechStation.Domain/*.csproj TechStation.Domain/
+COPY TechStation.Data/*.csproj TechStation.Data/
+
+# Restore qilamiz (bu barcha loyihalar uchun bo'ladi)
+RUN dotnet restore TechStation.Api/TechStation.Api.csproj
+
+# Barcha kodni nusxa ko'chiramiz
 COPY . .
-WORKDIR "/src/src/TechStation.Api"
-RUN dotnet build "./TechStation.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
-# This stage is used to publish the service project to be copied to the final stage
+# Build qilamiz
+RUN dotnet build TechStation.Api/TechStation.Api.csproj -c Release -o /app/build
+
+# Publish qilamiz
 FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./TechStation.Api.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish TechStation.Api/TechStation.Api.csproj -c Release -o /app/publish
 
-# This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
-FROM base AS final
+# Runtime image
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+
+ENV ASPNETCORE_ENVIRONMENT=Development
+
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "TechStation.Api.dll"]
