@@ -1,0 +1,57 @@
+name: Build and Deploy to VM
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: 🛠️ Build and Push Docker Image
+    runs-on: ubuntu-latest
+
+    outputs:
+      image_name: registry.digitalocean.com/my-container-registry/market-place:${{ github.sha }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: echo "${{ secrets.REGISTRY_TOKEN }}" | docker login registry.digitalocean.com -u ${{ secrets.REGISTRY_USERNAME }} --password-stdin
+
+      - run: docker build -t registry.digitalocean.com/my-container-registry/market-place:${{ github.sha }} .
+
+      - run: docker push registry.digitalocean.com/my-container-registry/market-place:${{ github.sha }}
+
+  deploy:
+    name: 🚀 Deploy to VM
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: appleboy/scp-action@v1
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          source: "./docker-compose.prod.yml"
+          target: "/opt/MarketPlace/docker-compose.yml"
+
+      - uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd /opt/MarketPlace
+
+            echo "${{ secrets.REGISTRY_TOKEN }}" | docker login registry.digitalocean.com -u ${{ secrets.REGISTRY_USERNAME }} --password-stdin
+
+            yq -i '.services.web.image = "${{ needs.build.outputs.image_name }}"' docker-compose.yaml
+
+            docker compose pull
+            docker compose down
+            docker compose up -d --remove-orphans
