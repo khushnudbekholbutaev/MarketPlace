@@ -7,7 +7,6 @@ on:
 
 jobs:
   build:
-    name: 🛠️ Build and Push Docker Image
     runs-on: ubuntu-latest
 
     outputs:
@@ -16,11 +15,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: echo "${{ secrets.REGISTRY_TOKEN }}" | docker login registry.digitalocean.com -u ${{ secrets.REGISTRY_USERNAME }} --password-stdin
-
-      - run: docker build -t registry.digitalocean.com/my-container-registry/market-place:${{ github.sha }} .
-
-      - run: docker push registry.digitalocean.com/my-container-registry/market-place:${{ github.sha }}
+      - name: 🛠️ Build and Push Docker Image
+        run: |
+          echo "${{ secrets.REGISTRY_TOKEN }}" | docker login registry.digitalocean.com -u ${{ secrets.REGISTRY_USERNAME }} --password-stdin
+          docker build -t registry.digitalocean.com/my-container-registry/market-place:${{ github.sha }} ./src/TechStation.Api
+          docker push registry.digitalocean.com/my-container-registry/market-place:${{ github.sha }}
 
   deploy:
     name: 🚀 Deploy to VM
