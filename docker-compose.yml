@@ -10,7 +10,7 @@ services:
       - "5434:5432"
 
   app:
-    image: ${{ steps.build.outputs.image_name }}
+    image: "${{ steps.build.outputs.image_name }}"
     depends_on:
       - db
     ports:
