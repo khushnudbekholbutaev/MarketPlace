@@ -1,0 +1,6 @@
+services:
+  techstation.api:
+    image: ${DOCKER_REGISTRY-}techstationapi
+    build:
+      context: .
+      dockerfile: src/TechStation.Api/Dockerfile
