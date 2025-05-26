@@ -1,6 +1,20 @@
 services:
-  techstation.api:
-    image: ${DOCKER_REGISTRY-}techstationapi
-    build:
-      context: .
-      dockerfile: src/TechStation.Api/Dockerfile
+  db:
+    image: postgres:17-alpine3.21
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: My!Passw0rd
+      POSTGRES_DB: marketplacedb
+    ports:
+      - "5432:5432"
+
+  app:
+    image: registry.digitalocean.com/image-register/market-place:1.0
+    depends_on:
+      - db
+    ports:
+      - "5000:8080"
+    environment:
+      ConnectionStrings__DefaultConnection: "Host=db;Port=5432;Database=marketplacedb;Username=postgres;Password=My!Passw0rd;Trust Server Certificate=true;"
+    restart: unless-stopped
