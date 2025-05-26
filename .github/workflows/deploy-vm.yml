@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      image_name: registry.digitalocean.com/my-container-registry/market-place:${{ github.sha }}
+      image_name: registry.digitalocean.com/image-register/market-place:${{ github.sha }}
 
     steps:
       - uses: actions/checkout@v4
