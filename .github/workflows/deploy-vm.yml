@@ -36,7 +36,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           source: "./docker-compose.yml"
-          target: "/opt/MarketPlace/docker-compose.org.yml"
+          target: "/opt/MarketPlace/"
 
       - uses: appleboy/ssh-action@v1
         with:
