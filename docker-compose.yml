@@ -11,7 +11,7 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
 
-  app:
+  web:
     image: registry.digitalocean.com/image-register/market-place:b3e7a7d2100cc965dfdf56a2c346df3f4c80546c
     depends_on:
       - db
