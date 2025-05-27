@@ -51,6 +51,4 @@ jobs:
 
             yq -i -y '.services.web.image = "${{ needs.build.outputs.image_name }}"' docker-compose.yml
 
-            docker compose pull
-            docker compose down
             docker compose up -d --remove-orphans
