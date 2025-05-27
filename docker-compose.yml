@@ -12,7 +12,7 @@ services:
       - db-data:/var/lib/postgresql/data
 
   app:
-    image: registry.digitalocean.com/image-register/market-place:d532b94146e3163bc90ad69a1076dfda2baefe72
+    image: registry.digitalocean.com/image-register/market-place:b3e7a7d2100cc965dfdf56a2c346df3f4c80546c
     depends_on:
       - db
     ports:
