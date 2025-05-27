@@ -104,6 +104,8 @@ namespace TechStation.Api
             var app = builder.Build();
 
             app.UseCors("AllowAll");
+            
+            app.UseRouting(); 
 
             if (app.Environment.IsDevelopment())
             {
