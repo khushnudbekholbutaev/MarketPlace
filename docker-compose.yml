@@ -8,6 +8,8 @@ services:
       POSTGRES_DB: marketplacedb
     ports:
       - "5434:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
 
   app:
     image: registry.digitalocean.com/image-register/market-place:d532b94146e3163bc90ad69a1076dfda2baefe72
@@ -18,3 +20,6 @@ services:
     environment:
       ConnectionStrings__DefaultConnection: "Host=db;Port=5432;Database=marketplacedb;Username=postgres;Password=My!Passw0rd;Trust Server Certificate=true;"
     restart: unless-stopped
+
+volumes:
+  db-data:
