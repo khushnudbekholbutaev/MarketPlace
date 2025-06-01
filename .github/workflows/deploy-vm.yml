@@ -19,7 +19,7 @@ jobs:
         run: |
           echo "${{ secrets.REGISTRY_TOKEN }}" | docker login registry.digitalocean.com -u ${{ secrets.REGISTRY_USERNAME }} --password-stdin
           docker build -t registry.digitalocean.com/my-image-register/market-place:${{ github.sha }} ./src
-          docker push registry.digitalocean.com/my-image-registe/market-place:${{ github.sha }}
+          docker push registry.digitalocean.com/my-image-register/market-place:${{ github.sha }}
 
   deploy:
     name: Deploy to VM
