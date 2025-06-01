@@ -1,6 +1,6 @@
 services:
   web:
-    image: registry.digitalocean.com/my-image-register/market-place:9af5437cc4d59f617b9f74ca19ac411e53ace39b
+    image: registry.digitalocean.com/my-image-register/market-place:ce7826d1da190b063ed6d5f9778c280e6909e0a7
     ports:
       - "5000:8080"
     restart: unless-stopped
