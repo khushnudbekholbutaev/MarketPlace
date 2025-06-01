@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      image_name: registry.digitalocean.com/image-register/market-place:${{ github.sha }}
+      image_name: registry.digitalocean.com/my-image-register/market-place:${{ github.sha }}
 
     steps:
       - uses: actions/checkout@v4
@@ -18,37 +18,45 @@ jobs:
       - name: Build and Push Docker Image
         run: |
           echo "${{ secrets.REGISTRY_TOKEN }}" | docker login registry.digitalocean.com -u ${{ secrets.REGISTRY_USERNAME }} --password-stdin
-          docker build -t registry.digitalocean.com/image-register/market-place:${{ github.sha }} ./src
-          docker push registry.digitalocean.com/image-register/market-place:${{ github.sha }}
+          docker build -t registry.digitalocean.com/my-image-register/market-place:${{ github.sha }} ./src
+          docker push registry.digitalocean.com/my-image-registe/market-place:${{ github.sha }}
 
   deploy:
     name: Deploy to VM
     runs-on: ubuntu-latest
     needs: build
+    strategy:
+      matrix:
+        include:
+          - host: ${{ secrets.SSH_HOST1 }}
+          - host: ${{ secrets.SSH_HOST2 }}
+          - host: ${{ secrets.SSH_HOST3 }}
+
 
     steps:
       - uses: actions/checkout@v4
 
       - uses: appleboy/scp-action@v1
         with:
-          host: ${{ secrets.SSH_HOST }}
+          host: ${{ matrix.host }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           source: "./docker-compose.yml"
-          target: "/opt/MarketPlace/"
+          target: "/opt/market-place/"
 
       - uses: appleboy/ssh-action@v1
         with:
-          host: ${{ secrets.SSH_HOST }}
+          host: ${{ matrix.host }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd /opt/MarketPlace
+            cd /opt/market-place
 
             echo "${{ secrets.REGISTRY_TOKEN }}" | docker login registry.digitalocean.com -u ${{ secrets.REGISTRY_USERNAME }} --password-stdin
 
             yq -i -y '.services.web.image = "${{ needs.build.outputs.image_name }}"' docker-compose.yml
 
             docker compose up -d --remove-orphans
+            docker compose exec nginx nginx -s reload
