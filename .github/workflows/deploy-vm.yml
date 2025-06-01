@@ -30,7 +30,7 @@ jobs:
       matrix:
         include:
           - host: 164.92.221.43
-          - host: 167.71.230
+          - host: 167.71.78.230
           - host: 167.99.35.79
 
     steps:
