@@ -81,6 +81,7 @@ namespace TechStation.Api
                 });
             });
 
+            builder.Services.AddHealthChecks();
             builder.Services.AddCustomServices();
 
             var logger = new LoggerConfiguration()
