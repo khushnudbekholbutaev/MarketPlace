@@ -28,9 +28,9 @@ jobs:
     strategy:
       matrix:
         include:
-          - host: ${{ secrets.SSH_HOST1 }}
-          - host: ${{ secrets.SSH_HOST2 }}
-          - host: ${{ secrets.SSH_HOST3 }}
+          - host: 164.92.221.43
+          - host: 167.71.78.230
+          - host: 167.99.35.79
 
 
     steps:
