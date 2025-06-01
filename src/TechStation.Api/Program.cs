@@ -102,10 +102,12 @@ namespace TechStation.Api
             WebEnvironmentHost.WebRootPath = Path.GetFullPath("wwwroot");
 
             var app = builder.Build();
-
-            app.UseCors("AllowAll");
             
             app.UseRouting(); 
+
+            app.MapHealthChecks("/health");
+
+            app.UseCors("AllowAll");
 
             if (app.Environment.IsDevelopment())
             {
