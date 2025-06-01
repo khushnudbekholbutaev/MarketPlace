@@ -77,7 +77,5 @@ public static class ServiceExtensions
 
         //Folder Name : Favourite
         services.AddScoped<IFavouriteService,FavouriteService>();
-
-        services.AddHealthChecks();
     }
 }
