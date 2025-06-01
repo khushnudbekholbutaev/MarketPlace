@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
 
   web:
-    image: registry.digitalocean.com/my-image-register/market-place:1.0.0
+    image: registry.digitalocean.com/my-image-register/market-place:9af5437cc4d59f617b9f74ca19ac411e53ace39b
     depends_on:
       - nginx
     ports:
