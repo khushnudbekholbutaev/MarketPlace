@@ -57,7 +57,7 @@ jobs:
 
             echo "${{ secrets.REGISTRY_TOKEN }}" | docker login registry.digitalocean.com -u ${{ secrets.REGISTRY_USERNAME }} --password-stdin
 
-            yq -i -y '.services.web.image = "${{ needs.build.outputs.image_name }}"' docker-compose.yml
+            yq -i '.services.web.image = "${{ needs.build.outputs.image_name }}"' docker-compose.yml
 
             docker compose up -d --remove-orphans
             docker compose exec nginx nginx -s reload
