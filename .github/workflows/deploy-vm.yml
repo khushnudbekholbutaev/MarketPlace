@@ -51,7 +51,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          script: |
+          run: |
             cd /opt/market-place
             echo "${{ secrets.REGISTRY_TOKEN }}" | docker login registry.digitalocean.com -u ${{ secrets.REGISTRY_USERNAME }} --password-stdin
             yq -i '.services.web.image = "${{ needs.build.outputs.image_name }}"' docker-compose.yml
