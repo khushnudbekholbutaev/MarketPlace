@@ -29,8 +29,6 @@ jobs:
       matrix:
         include:
           - host: 164.92.221.43
-          - host: 167.71.78.230
-          - host: 167.99.35.79
 
     steps:
       - uses: actions/checkout@v4
@@ -53,6 +51,5 @@ jobs:
           script: |
             cd /opt/market-place
             echo "${{ secrets.REGISTRY_TOKEN }}" | docker login registry.digitalocean.com -u ${{ secrets.REGISTRY_USERNAME }} --password-stdin
-            IMAGE_NAME="${{ needs.build.outputs.image_name }}"
-            yq eval -i ".services.web.image = strenv(IMAGE_NAME)" docker-compose.yml
+            yq -i '.services.web.image = "${{ needs.build.outputs.image_name }}"' docker-compose.yml
             docker compose up -d --remove-orphans
