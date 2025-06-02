@@ -53,5 +53,6 @@ jobs:
           script: |
             cd /opt/market-place
             echo "${{ secrets.REGISTRY_TOKEN }}" | docker login registry.digitalocean.com -u ${{ secrets.REGISTRY_USERNAME }} --password-stdin
-            yq -i '.services.web.image = \"${{ needs.build.outputs.image_name }}\"' docker-compose.yml
+            IMAGE_NAME="${{ needs.build.outputs.image_name }}"
+            yq eval -i ".services.web.image = strenv(IMAGE_NAME)" docker-compose.yml
             docker compose up -d --remove-orphans
