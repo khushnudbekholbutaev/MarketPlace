@@ -24,7 +24,6 @@ jobs:
   deploy:
     name: Deploy to VM
     runs-on: ubuntu-latest
-    timeout-minutes: 30
     needs: build
     strategy:
       matrix:
@@ -51,9 +50,10 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          run: |
+          script: |
             cd /opt/market-place
             echo "${{ secrets.REGISTRY_TOKEN }}" | docker login registry.digitalocean.com -u ${{ secrets.REGISTRY_USERNAME }} --password-stdin
-            yq -i '.services.web.image = "${{ needs.build.outputs.image_name }}"' docker-compose.yml
+            IMAGE_NAME="${{ needs.build.outputs.image_name }}"
+            yq -i ".services.web.image = \"$IMAGE_NAME\"" docker-compose.yml
             docker compose up -d --remove-orphans
 
