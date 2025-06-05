@@ -105,7 +105,6 @@ namespace TechStation.Api
             var app = builder.Build();
             
             app.UseRouting(); 
-
             app.MapHealthChecks("/health");
 
             app.UseCors("AllowAll");
