@@ -12,7 +12,7 @@ using TechStation.Data.DbContexts;
 namespace TechStation.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250526135516_InitialCreate")]
+    [Migration("20250605154124_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
