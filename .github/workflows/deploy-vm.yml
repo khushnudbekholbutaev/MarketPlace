@@ -28,9 +28,8 @@ jobs:
     strategy:
       matrix:
         include:
-          - host: 164.92.221.43
-          - host: 167.71.78.230
-          - host: 167.99.35.79
+          - host: 167.172.38.222
+          - host: 134.122.54.170
 
     steps:
       - uses: actions/checkout@v4
