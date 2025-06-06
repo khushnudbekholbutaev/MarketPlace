@@ -25,6 +25,8 @@ RUN dotnet publish TechStation.Api/TechStation.Api.csproj -c Release -o /app/pub
 # Runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+
 ENV ASPNETCORE_ENVIRONMENT=Development
 
 WORKDIR /app
