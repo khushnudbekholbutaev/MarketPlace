@@ -7,7 +7,7 @@ services:
     environment:
       - CONNECTION_STRING=Host=146.190.229.254;Port=5432;Database=marketdb;Username=postgres;Password=mysecurepassword
     command: >
-      sh -c "dotnet ef database update && dotnet MyApp.dll"
+      sh -c "dotnet ef database update --startup-project TechStation.Api && dotnet TechStation.Api.dll"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
       interval: 30s
