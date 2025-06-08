@@ -5,7 +5,7 @@ services:
       - "8080"
     restart: unless-stopped
     environment:
-      - CONNECTION_STRING=Host=146.190.229.254;Port=5432;Database=marketdb;Username=postgres;Password=mysecurepassword
+      - CONNECTION_STRING=Host=146.190.229.254;Port=5000;Database=marketdb;Username=postgres;Password=mysecurepassword
     command: >
       sh -c "dotnet ef database update --project ./TechStation.Data --startup-project ../TechStation.Api && dotnet TechStation.Api.dll"
     healthcheck:
