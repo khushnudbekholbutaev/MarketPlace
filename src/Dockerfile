@@ -3,25 +3,23 @@ WORKDIR /src
 
 EXPOSE 8080
 
-# Loyiha csproj fayllarini nusxalash
+# Barcha loyiha fayllarini nusxa ko'chirish
 COPY TechStation.Api/*.csproj TechStation.Api/
 COPY TechStation.Service/*.csproj TechStation.Service/
 COPY TechStation.Domain/*.csproj TechStation.Domain/
 COPY TechStation.Data/*.csproj TechStation.Data/
 
-# Restore bajarish
+# Restore qilamiz (bu barcha loyihalar uchun bo'ladi)
 RUN dotnet restore TechStation.Api/TechStation.Api.csproj
 
-# Barcha kodni nusxalash
+# Barcha kodni nusxa ko'chiramiz
 COPY . .
 
-# Build qilish
+# Build qilamiz
 RUN dotnet build TechStation.Api/TechStation.Api.csproj -c Release -o /app/build
 
-# Migrationlarni bajarish (database update)
-RUN dotnet ef database update --project ./TechStation.Data --startup-project ./TechStation.Api
-
-# Publish qilish
+# Publish qilamiz
+FROM build AS publish
 RUN dotnet publish TechStation.Api/TechStation.Api.csproj -c Release -o /app/publish
 
 # Runtime image
@@ -32,6 +30,5 @@ RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 ENV ASPNETCORE_ENVIRONMENT=Development
 
 WORKDIR /app
-COPY --from=build /app/publish .
-
+COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "TechStation.Api.dll"]
